@@ -5,6 +5,23 @@
 #include <string.h>
 
 int test_reverse(char *);
+#define DEBUG 1
+#undef DEBUG
+
+#ifdef DEBUG
+int main(void)
+{
+  char * str2 = "some NUMmbers12345" ;  
+  char i;
+  i = reverse_string(NULL, strlen(str2));
+  printf("%d\n",(int) i);
+
+  return 0;
+
+}
+#endif
+
+#ifndef DEBUG
 
 int main(void)
 {
@@ -22,7 +39,7 @@ int main(void)
 
   return 0;
 }
-
+#endif
 
 
 int test_reverse(char * str)
@@ -32,8 +49,8 @@ int test_reverse(char * str)
 
     
      assert(reverse_string(str, length ) == 0); 
-     assert(reverse_string(NULL, length ) <  0);
-     assert(reverse_string(str, 0 ) <  0); 
+     assert(reverse_string(NULL, length )!=   0);
+     assert(reverse_string(str, 0 ) !=  0); 
      i = 1;
 
      return i;
