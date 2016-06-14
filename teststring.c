@@ -15,7 +15,7 @@ int main(void)
 
   test_reverse(str1);
   test_reverse(str2);
-  reverse_string(str3, 31);
+  reverse_string(str3, 32);
  /*  test_reverse(str3);*/
  
   printf("All asserts pass!\n");
