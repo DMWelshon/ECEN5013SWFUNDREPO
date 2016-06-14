@@ -33,7 +33,11 @@ char reverse_string(char * str, int length)
 
   for(i = 0; i < length; i++)
   {
-     printf("%c", buffer[i]);
+
+    if(buffer[i] == '\n')      { printf("\\"); printf("n");   }  
+    else if(buffer[i] == '\t') { printf("\\"); printf("t");   } 
+    else if(buffer[i] == '\0') { printf("\\"); printf("0");   }  
+    else printf("%c", buffer[i]);   
   }
 
   printf("\n\n");
